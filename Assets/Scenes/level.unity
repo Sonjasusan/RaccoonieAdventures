@@ -1983,6 +1983,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8957304962413023527, guid: 3f9b178ccd3b86f4ebbfc1f5a2815e56,
         type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957304962413023527, guid: 3f9b178ccd3b86f4ebbfc1f5a2815e56,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -4149,6 +4154,7 @@ GameObject:
   - component: {fileID: 961739752}
   - component: {fileID: 961739751}
   - component: {fileID: 961739750}
+  - component: {fileID: 961739754}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4255,6 +4261,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &961739754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961739749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 295e8210168df7f4d8ffd24442c0dc01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 2048593115}
+  offset: {x: 0, y: -1, z: -1.2}
+  zoomSpeed: 4
+  minZoom: 5
+  maxZoom: 15
+  pitch: 2
+  yawSpeed: 100
 --- !u!1001 &964776837
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5950,6 +5975,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Ground_03 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957304962413023527, guid: 3f9b178ccd3b86f4ebbfc1f5a2815e56,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8957304962413023527, guid: 3f9b178ccd3b86f4ebbfc1f5a2815e56,
         type: 3}
@@ -9629,6 +9659,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1c1d53e3d5bed43b7db30cc642c1cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementMask:
+    serializedVersion: 2
+    m_Bits: 8
+--- !u!4 &2048593115 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4299714349343587117, guid: eb18e40888cc92f46b2cfc8d68ec8b32,
+    type: 3}
+  m_PrefabInstance: {fileID: 1411547991}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2049575621
 PrefabInstance:
   m_ObjectHideFlags: 0
