@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControllerRB : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     public float speed = 10; // Pelaajan nopeus
     public float jumpForce = 10; // Pelaajan hypyn voima
     public float rotationSpeed = 200;
+
+    public SoundEffect jumpSE; //kutsutaan soundeffect luokkaa (‰‰ni‰ varten)
+
+    public Transform itemDropPoint;
 
     private Vector3 playerInput; // pelaajan input
     private Rigidbody rb; // Rigidbody referenssi
@@ -17,6 +21,8 @@ public class PlayerControllerRB : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameManager.Instance.Player = this.gameObject;
+
         // haetaan t‰st‰ objektista rigidbody komponentti talteen
         rb = GetComponent<Rigidbody>();
     }
@@ -37,7 +43,7 @@ public class PlayerControllerRB : MonoBehaviour
         {
             // jos tosi, isGrounded => true.
             isGrounded = true;
-        } 
+        }
         else
         {
             // Jos ep‰tosi, pelaaja ei ole maassa
@@ -48,6 +54,7 @@ public class PlayerControllerRB : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.AddForce(Vector3.up * jumpForce);
+            //AudioManager.Instance.PlayClipOnce(jumpSE, this.gameObject); <- ƒƒNET kun hyp‰t‰‰n (Lis‰t‰‰n myˆhemmin)
         }
     }
 
@@ -58,12 +65,21 @@ public class PlayerControllerRB : MonoBehaviour
         rb.velocity = playerInput;
     }
 
-
     void OnTriggerEnter(Collider col)
     {
-        if (col.CompareTag("Coin"))
+        //Kun pelaaja osuu triggeriin, katsotaan onko siin‰ IInteractable rajapintaa, jos on niin toistetaan OnEnterInteract metodi
+        if (col.GetComponent<IInteractable>() != null)
         {
-            Destroy(col.gameObject);
+            col.GetComponent<IInteractable>().OnEnterInteract();
+        }
+    }
+
+    void OnTriggerExit(Collider col)
+    {
+        //Kun pelaaja poistuu triggerist‰, katsotaan onko siin‰ IInteractable rajapintaa, jos on niin toistetaan OnExitInteract metodi
+        if (col.GetComponent<IInteractable>() != null)
+        {
+            col.GetComponent<IInteractable>().OnExitInteract();
         }
     }
 }
