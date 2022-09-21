@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControllerRB : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     public float speed = 10; // Pelaajan nopeus
     public float jumpForce = 10; // Pelaajan hypyn voima
