@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
 
     bool isGrounded = false; //pelaajan tarkistus, onko se maassa vai ei
                              //(Rigidbody liikkumisessa t‰h‰n ei ole automaattista toimintoa, kuten Character Controllerissa)
+    
+    //public Animator animator; //Liikehdinn‰n animointia varten
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,8 @@ public class PlayerController : MonoBehaviour
 
         // haetaan t‰st‰ objektista rigidbody komponentti talteen
         rb = GetComponent<Rigidbody>();
+        //animator = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
@@ -48,6 +52,7 @@ public class PlayerController : MonoBehaviour
         {
             // Jos ep‰tosi, pelaaja ei ole maassa
             isGrounded = false;
+           
         }
 
         // Kun pelaaja on maassa ja painaa Space -> hyp‰t‰‰n AddForce toiminnon avulla
