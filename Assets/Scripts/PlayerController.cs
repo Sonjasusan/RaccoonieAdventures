@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,14 +11,19 @@ public class PlayerController : MonoBehaviour
 
     public SoundEffect jumpSE; //kutsutaan soundeffect luokkaa (‰‰ni‰ varten)
 
-    public Transform itemDropPoint;
+    public Transform itemDropPoint; //itemien putoamispaikka
 
     private Vector3 playerInput; // pelaajan input
     private Rigidbody rb; // Rigidbody referenssi
 
     bool isGrounded = false; //pelaajan tarkistus, onko se maassa vai ei
                              //(Rigidbody liikkumisessa t‰h‰n ei ole automaattista toimintoa, kuten Character Controllerissa)
-    
+
+    //Liikkumista varten (NavMeshAgent)
+    NavMeshAgent agent;
+    public LayerMask movementMask; //miss‰ liikutaan = Ground
+
+
     //public Animator animator; //Liikehdinn‰n animointia varten
 
     // Start is called before the first frame update
@@ -27,7 +33,8 @@ public class PlayerController : MonoBehaviour
 
         // haetaan t‰st‰ objektista rigidbody komponentti talteen
         rb = GetComponent<Rigidbody>();
-        //animator = GetComponent<Animator>();
+        agent = GetComponent<NavMeshAgent>(); //Haetaan NavMeshAgent -komponentti
+        //animator = GetComponent<Animator>(); //Haetaan animaattori
 
     }
 
@@ -60,8 +67,11 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(Vector3.up * jumpForce);
             //AudioManager.Instance.PlayClipOnce(jumpSE, this.gameObject); <- ƒƒNET kun hyp‰t‰‰n (Lis‰t‰‰n myˆhemmin)
+            //animaatio hypyst‰(?)
         }
     }
+
+  
 
     private void FixedUpdate()
     {
