@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,22 +8,15 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 10; // Pelaajan hypyn voima
     public float rotationSpeed = 200;
 
-    public SoundEffect jumpSE; //kutsutaan soundeffect luokkaa (‰‰ni‰ varten)
+    public SoundEffect jumpSE;
 
-    public Transform itemDropPoint; //itemien putoamispaikka
+    public Transform itemDropPoint;
 
     private Vector3 playerInput; // pelaajan input
     private Rigidbody rb; // Rigidbody referenssi
 
     bool isGrounded = false; //pelaajan tarkistus, onko se maassa vai ei
                              //(Rigidbody liikkumisessa t‰h‰n ei ole automaattista toimintoa, kuten Character Controllerissa)
-
-    //Liikkumista varten (NavMeshAgent)
-    NavMeshAgent agent;
-    public LayerMask movementMask; //miss‰ liikutaan = Ground
-
-
-    //public Animator animator; //Liikehdinn‰n animointia varten
 
     // Start is called before the first frame update
     void Start()
@@ -33,9 +25,6 @@ public class PlayerController : MonoBehaviour
 
         // haetaan t‰st‰ objektista rigidbody komponentti talteen
         rb = GetComponent<Rigidbody>();
-        agent = GetComponent<NavMeshAgent>(); //Haetaan NavMeshAgent -komponentti
-        //animator = GetComponent<Animator>(); //Haetaan animaattori
-
     }
 
     // Update is called once per frame
@@ -59,19 +48,15 @@ public class PlayerController : MonoBehaviour
         {
             // Jos ep‰tosi, pelaaja ei ole maassa
             isGrounded = false;
-           
         }
 
         // Kun pelaaja on maassa ja painaa Space -> hyp‰t‰‰n AddForce toiminnon avulla
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.AddForce(Vector3.up * jumpForce);
-            //AudioManager.Instance.PlayClipOnce(jumpSE, this.gameObject); <- ƒƒNET kun hyp‰t‰‰n (Lis‰t‰‰n myˆhemmin)
-            //animaatio hypyst‰(?)
+            //AudioManager.Instance.PlayClipOnce(jumpSE, this.gameObject);
         }
     }
-
-  
 
     private void FixedUpdate()
     {
