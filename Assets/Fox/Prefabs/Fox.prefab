@@ -858,7 +858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  jumpForce: 500
+  jumpForce: 250
   rotationSpeed: 200
   jumpSE:
     volume: 0.5
