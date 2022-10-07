@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 10; // Pelaajan hypyn voima
     public float rotationSpeed = 200;
 
-    public SoundEffect jumpSE; //kutsutaan soundeffect luokkaa (‰‰ni‰ varten)
+    public SoundEffect jumpSE;
 
     public Transform itemDropPoint;
 
@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.AddForce(Vector3.up * jumpForce);
-            //AudioManager.Instance.PlayClipOnce(jumpSE, this.gameObject); <- ƒƒNET kun hyp‰t‰‰n (Lis‰t‰‰n myˆhemmin)
+            //AudioManager.Instance.PlayClipOnce(jumpSE, this.gameObject);
         }
     }
 
