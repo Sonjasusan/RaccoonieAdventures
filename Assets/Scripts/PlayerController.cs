@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+  
     public float speed = 10; // Pelaajan nopeus
     public float jumpForce = 10; // Pelaajan hypyn voima
     public float rotationSpeed = 200;
 
-    public SoundEffect jumpSE;
+    public SoundEffect jumpSE; //Hyppy soundeffect
 
-    public Transform itemDropPoint;
+    public Transform itemDropPoint; //itemin pudotuspointti
 
     private Vector3 playerInput; // pelaajan input
     private Rigidbody rb; // Rigidbody referenssi
 
+
     bool isGrounded = false; //pelaajan tarkistus, onko se maassa vai ei
                              //(Rigidbody liikkumisessa t‰h‰n ei ole automaattista toimintoa, kuten Character Controllerissa)
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,11 +28,14 @@ public class PlayerController : MonoBehaviour
 
         // haetaan t‰st‰ objektista rigidbody komponentti talteen
         rb = GetComponent<Rigidbody>();
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+       
+
         // K‰‰nnet‰‰n pelaajaa transformin Rotate toiminnolla, pelk‰st‰‰n Horizontal inputin mukaan
         transform.Rotate(new Vector3(0, Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime, 0));
 
@@ -56,6 +62,7 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector3.up * jumpForce);
             //AudioManager.Instance.PlayClipOnce(jumpSE, this.gameObject);
         }
+
     }
 
     private void FixedUpdate()
