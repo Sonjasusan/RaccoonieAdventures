@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-  
+    Animator animator;
+    int isWalkingHash;
+    int isRunningHash;
+    int isJumpingHash;
+
     public float speed = 10; // Pelaajan nopeus
     public float jumpForce = 10; // Pelaajan hypyn voima
     public float rotationSpeed = 200;
@@ -28,13 +32,20 @@ public class PlayerController : MonoBehaviour
 
         // haetaan t‰st‰ objektista rigidbody komponentti talteen
         rb = GetComponent<Rigidbody>();
-       
+
+        animator = GetComponent<Animator>(); //Haetaan animaattori komponentti
+        //Debug.Log(animator);
+        isWalkingHash = Animator.StringToHash("isWalking"); //K‰vely animaatio
+        isRunningHash = Animator.StringToHash("isRunning"); //Juoksu animaatio
+        isJumpingHash = Animator.StringToHash("isJumping"); //Hyppyanimaatio
+
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+        bool runPressed = Input.GetKey(KeyCode.LeftShift);
+
 
         // K‰‰nnet‰‰n pelaajaa transformin Rotate toiminnolla, pelk‰st‰‰n Horizontal inputin mukaan
         transform.Rotate(new Vector3(0, Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime, 0));
@@ -44,11 +55,13 @@ public class PlayerController : MonoBehaviour
         playerInput = transform.forward * Input.GetAxis("Vertical") * speed;// <- speed
         playerInput.y = rb.velocity.y; // y-arvoksi asetetaan Rigidbodyn velocity y, joka vastaa painovoimaa
 
+       
         // Tarkistus, jos pelaajan y-velocity on -0.01 ja 0.01 v‰lill‰
         if (rb.velocity.y <= 0.01f && rb.velocity.y >= -0.01f)
         {
             // jos tosi, isGrounded => true.
             isGrounded = true;
+            animator.SetBool(isJumpingHash, false); //animaattorista isJumping falseksi
         }
         else
         {
@@ -61,7 +74,17 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(Vector3.up * jumpForce);
             //AudioManager.Instance.PlayClipOnce(jumpSE, this.gameObject);
+            animator.SetBool(isJumpingHash, true); //animaattorissa isJumping trueksi
+            Debug.Log("jumping");
         }
+
+        //Juokseminen
+        if (runPressed == true)
+        {
+            speed = 20;
+            animator.SetBool(isRunningHash, true);
+        }
+      
 
     }
 

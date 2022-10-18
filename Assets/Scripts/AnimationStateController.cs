@@ -5,7 +5,6 @@ using UnityEngine;
 public class AnimationStateController : MonoBehaviour
 {
     Animator animator;
-    // Start is called before the first frame update
     int isWalkingHash;
     int isRunningHash;
     int isJumpingHash;
@@ -24,8 +23,8 @@ public class AnimationStateController : MonoBehaviour
     {
         bool isRunning = animator.GetBool(isRunningHash);
         bool isWalking = animator.GetBool(isWalkingHash);
-        bool isJumping = animator.GetBool(isJumpingHash);
-        bool jumpPressed = Input.GetKey("space");
+        //bool isJumping = animator.GetBool(isJumpingHash);
+        //bool jumpPressed = Input.GetKey("space");
         bool forwardPressed = Input.GetKey("w");
         bool runPressed = Input.GetKey("left shift");
 
@@ -39,6 +38,7 @@ public class AnimationStateController : MonoBehaviour
         if (isWalking && !forwardPressed)
         {
             animator.SetBool(isWalkingHash, false); //laitetaan animaattorissa boolean "isWalking" falseksi (koska ei kävellä)
+            Debug.Log(animator);
         }
 
         //JUOKSU OSIO
@@ -53,11 +53,13 @@ public class AnimationStateController : MonoBehaviour
         if (isRunning && (!forwardPressed || !runPressed))
         {
             animator.SetBool(isRunningHash, false); //laitetaan animaattorissa boolean "isRunning" falseksi (koska ei juosta tai kävellä)
+            Debug.Log(animator);
         }
 
-        if (isJumping && jumpPressed)
-        {
-            animator.SetBool(isJumpingHash, true);
-        }
+        //if (isJumping && jumpPressed)
+        //{
+        //    animator.SetBool(isJumpingHash, true);
+        //    Debug.Log("jumping");
+        //}
     }
 }
