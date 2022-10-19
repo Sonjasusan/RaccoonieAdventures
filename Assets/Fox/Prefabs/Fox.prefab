@@ -996,7 +996,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  jumpForce: 250
+  jumpForce: 400
   rotationSpeed: 200
   jumpSE:
     volume: 0.5
@@ -1016,7 +1016,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 89aef78a4ca3887468b468efff2c549f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 

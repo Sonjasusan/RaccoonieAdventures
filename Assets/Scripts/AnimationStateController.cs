@@ -26,7 +26,7 @@ public class AnimationStateController : MonoBehaviour
         //bool isJumping = animator.GetBool(isJumpingHash);
         //bool jumpPressed = Input.GetKey("space");
         bool forwardPressed = Input.GetKey("w");
-        bool runPressed = Input.GetKey("left shift");
+        bool runPressed = Input.GetKey(KeyCode.LeftShift);
 
         //Jos pelaaja painaa w:tä
         if (isWalking && forwardPressed)
@@ -38,7 +38,6 @@ public class AnimationStateController : MonoBehaviour
         if (isWalking && !forwardPressed)
         {
             animator.SetBool(isWalkingHash, false); //laitetaan animaattorissa boolean "isWalking" falseksi (koska ei kävellä)
-            Debug.Log(animator);
         }
 
         //JUOKSU OSIO

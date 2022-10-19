@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool runPressed = Input.GetKey(KeyCode.LeftShift);
+        bool runPressed = Input.GetKey(KeyCode.LeftShift); //juoksu left shiftillä
 
 
         // Käännetään pelaajaa transformin Rotate toiminnolla, pelkästään Horizontal inputin mukaan
@@ -72,17 +72,21 @@ public class PlayerController : MonoBehaviour
         // Kun pelaaja on maassa ja painaa Space -> hypätään AddForce toiminnon avulla
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
+            animator.SetBool(isJumpingHash, true); //animaattorissa isJumping trueksi
+
             rb.AddForce(Vector3.up * jumpForce);
             //AudioManager.Instance.PlayClipOnce(jumpSE, this.gameObject);
-            animator.SetBool(isJumpingHash, true); //animaattorissa isJumping trueksi
-            Debug.Log("jumping");
         }
 
         //Juokseminen
-        if (runPressed == true)
+        if (runPressed == true) //jos on painettu juoksunappia (left shift)
         {
-            speed = 20;
-            animator.SetBool(isRunningHash, true);
+            speed = 20; //nostetaan nopeus normi 10:stä (annettu ylhäällä) 20:een
+            animator.SetBool(isRunningHash, true); //laitetaan animaattorista isRunning trueksi
+        }
+        else
+        {
+            animator.SetBool(isRunningHash, false); //muussa tapauksessa isRunning on false
         }
       
 
@@ -93,6 +97,15 @@ public class PlayerController : MonoBehaviour
         // FixedUpdatessa liikutetaan pelaajaa velocityn avulla.
         // Kaikki Fysiikkaan liittyvät asiat lisätään FixedUpdate -metodiin
         rb.velocity = playerInput;
+
+        if (speed > 0)
+        {
+            animator.SetBool(isWalkingHash, true);
+        }
+        else
+        {
+            animator.SetBool(isWalkingHash, false);
+        }
     }
 
     void OnTriggerEnter(Collider col)
