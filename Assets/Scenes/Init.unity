@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -130,6 +130,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 765111026571155118, guid: d4081adb7ba0c164d9500764be43d841,
+        type: 3}
+      propertyPath: m_text
+      value: Raccoonie Life
+      objectReference: {fileID: 0}
+    - target: {fileID: 765111026571155119, guid: d4081adb7ba0c164d9500764be43d841,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 246.851
+      objectReference: {fileID: 0}
+    - target: {fileID: 765111026571155119, guid: d4081adb7ba0c164d9500764be43d841,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 82.311
+      objectReference: {fileID: 0}
+    - target: {fileID: 765111026571155119, guid: d4081adb7ba0c164d9500764be43d841,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 23.4255
+      objectReference: {fileID: 0}
+    - target: {fileID: 765111026571155119, guid: d4081adb7ba0c164d9500764be43d841,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -87.1555
+      objectReference: {fileID: 0}
     - target: {fileID: 765111026874331284, guid: d4081adb7ba0c164d9500764be43d841,
         type: 3}
       propertyPath: m_Pivot.x
@@ -239,6 +264,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas_UIManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 765111026880235178, guid: d4081adb7ba0c164d9500764be43d841,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.08066667
+      objectReference: {fileID: 0}
+    - target: {fileID: 765111026880235178, guid: d4081adb7ba0c164d9500764be43d841,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.08066667
+      objectReference: {fileID: 0}
+    - target: {fileID: 765111026880235178, guid: d4081adb7ba0c164d9500764be43d841,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 765111026880235178, guid: d4081adb7ba0c164d9500764be43d841,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4081adb7ba0c164d9500764be43d841, type: 3}

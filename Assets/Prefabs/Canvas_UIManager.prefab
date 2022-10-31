@@ -689,8 +689,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 649a7f0c9c3a2df4fbd5d5d4dbdde694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenuPanel: {fileID: 0}
-  HUDPanel: {fileID: 0}
+  MainMenuPanel: {fileID: 765111026007902478}
+  HUDPanel: {fileID: 765111025570740321}
   inventoryPanel: {fileID: 0}
   UIItemPrefab: {fileID: 0}
 --- !u!1 &765111026880235179
