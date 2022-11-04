@@ -38,7 +38,6 @@ public class LevelManager : Singleton<LevelManager>
         {
             // Jos scene mihin vaihdettiin EI ole MainMenuScene niin pistet‰‰n HUD paneeli p‰‰lle
             UiManager.Instance.ToggleMainMenuPanel(false);
-
         }
     }
 
