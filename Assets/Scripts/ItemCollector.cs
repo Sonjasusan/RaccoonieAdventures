@@ -27,7 +27,7 @@ using UnityEngine;
             {
                 /*collectionSoundEffect.Play();*/ //soitetaan soundefecti -> Ei viel‰ ‰‰ni‰
                 Destroy(collision.gameObject); //tuhotaan se (eli ker‰t‰‰n)
-                GameManager.diamonds++;
+                //GameManager.diamonds++;
                 Debug.Log("Diamond collected"); //katsotaan loggaamalla ett‰ toimii
             }
 

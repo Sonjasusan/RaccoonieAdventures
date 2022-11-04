@@ -11,7 +11,7 @@ public class InventoryManager : Singleton<InventoryManager>
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
-            //UiManager.Instance.ToggleInventoryPanel();
+            UiManager.Instance.ToggleInventoryPanel();
         }
     }
 
@@ -19,10 +19,10 @@ public class InventoryManager : Singleton<InventoryManager>
     {
         Debug.Log("Added " + newItem.itemName + " to inventory"); //<-Logataan että itemi on lisätty
         playerInventory.Add(newItem); //Lisätään
-        //AudioManager.Instance.PlayClipOnce(newItem.pickupSE); <-Pickupin soundeffect
+                                      //AudioManager.Instance.PlayClipOnce(newItem.pickupSE); <-Pickupin soundeffect
 
-        
-        //UiManager.Instance.CreateNewUIItem(newItem); <- UI manageriin uusi itemi
+
+        UiManager.Instance.CreateNewUIItem(newItem); //UIManageriin uusi itemi
     }
 
     public void RemoveItemFromInventory(ItemData item)
