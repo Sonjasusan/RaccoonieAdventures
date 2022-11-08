@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e9bd3e5ac9cf484bbc6849159b95555, type: 3}
-  m_Name: Star_ItemData
+  m_Name: Cubie_ItemData
   m_EditorClassIdentifier: 
-  itemName: Star
-  itemIcon: {fileID: 21300000, guid: dc597dcbf74c3234c995ef7378998a1d, type: 3}
+  itemName: Cubie
+  itemIcon: {fileID: 21300000, guid: 17d7fe1d152e44c429b80bb7ecbad707, type: 3}
   itemType: 3
-  itemPrefab: {fileID: 1838030826455175483, guid: 2944e589715a77345a7a131a33340c2f,
-    type: 3}
+  itemPrefab: {fileID: 1000013765287000, guid: 38dea0631a962ad45b71e2759e4240d8, type: 3}

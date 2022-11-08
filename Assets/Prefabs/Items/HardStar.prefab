@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1871051688310207705}
   - component: {fileID: 1861047326305072269}
   - component: {fileID: 1735980059343363639}
+  - component: {fileID: 8379111104489523786}
   m_Layer: 0
   m_Name: HardStar
   m_TagString: Untagged
@@ -108,3 +109,16 @@ MonoBehaviour:
   endScale: {x: 1.5, y: 1.5, z: 1.5}
   scaleSpeed: 1
   scaleRate: 0.5
+--- !u!114 &8379111104489523786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838030826455175483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6194f3dac813c34fb94556ef18fa5d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: b430d0227802b214aaa7573e64ef0a27, type: 2}

@@ -14,8 +14,8 @@ public class UiManager : Singleton<UiManager>
 
     [Header("HUD")]
     public GameObject HUDPanel; // Pelin HUD Paneeli, eli UI:t jotka n‰kyy pelin aikana (healthbar yms.)
-    public GameObject inventoryPanel;
-    public GameObject UIItemPrefab;
+    public GameObject InventoryPanel; //Inventory panel
+    public GameObject InventorySlot;
 
     // Start is called before the first frame update
     void Awake()
@@ -23,7 +23,7 @@ public class UiManager : Singleton<UiManager>
         // Pistet‰‰n alussa molemmat pois p‰‰lt‰
         MainMenuPanel.SetActive(false);
         HUDPanel.SetActive(false);
-        inventoryPanel.SetActive(false);
+        InventoryPanel.SetActive(false);
     }
 
     /// <summary>
@@ -42,12 +42,12 @@ public class UiManager : Singleton<UiManager>
         if (HUDPanel.activeInHierarchy == false)
             return;
 
-        inventoryPanel.SetActive(!inventoryPanel.activeInHierarchy);
+        InventoryPanel.SetActive(!InventoryPanel.activeInHierarchy);
     }
 
     public void CreateNewUIItem(ItemData data)
     {
-        GameObject newItemUI = Instantiate(UIItemPrefab, inventoryPanel.transform);
-        //newItemUI.GetComponent<UIItemData>().InitializeItemUI(data);
+        GameObject newItemUI = Instantiate(InventorySlot, InventoryPanel.transform);
+        newItemUI.GetComponent<UiItemData>().InitializeItemUI(data);
     }
 }
