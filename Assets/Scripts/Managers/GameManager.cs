@@ -19,13 +19,13 @@ public class GameManager : Singleton<GameManager>
     {
         gameManager = this;
 
-        //if (gameManager != null && gameManager != this) //Jos tehd‰‰n uusi gamemanager
-        //{
-        //    Destroy(this); //tuhotaan t‰m‰
-        //}
-        //else
-        //{
-        //    gameManager = this; //Muussa tapauksessa t‰‰ on SE gamemanager
-        //}
+        if (gameManager != null && gameManager != this) //Jos tehd‰‰n uusi gamemanager
+        {
+            Destroy(this); //tuhotaan t‰m‰
+        }
+        else
+        {
+            gameManager = this; //Muussa tapauksessa t‰‰ on SE gamemanager
+        }
     }
 }

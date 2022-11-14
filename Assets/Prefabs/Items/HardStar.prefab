@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1861047326305072269}
   - component: {fileID: 1735980059343363639}
   - component: {fileID: 8379111104489523786}
+  - component: {fileID: 2843190978820131242}
   m_Layer: 0
   m_Name: HardStar
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1838030826455175483}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 64.89, y: 2.2529712, z: -36.61}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -122,3 +123,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: b430d0227802b214aaa7573e64ef0a27, type: 2}
+--- !u!65 &2843190978820131242
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838030826455175483}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.1296964, y: 0.5992532, z: 2.9765193}
+  m_Center: {x: -0.00000017881393, y: -0.00055719924, z: 0.15712135}
