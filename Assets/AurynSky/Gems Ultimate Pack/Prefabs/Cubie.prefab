@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33000013317686294}
   - component: {fileID: 23000010834650084}
   - component: {fileID: 114000012791302422}
-  - component: {fileID: 4266268988864045624}
+  - component: {fileID: 4831285218510344442}
   m_Layer: 0
   m_Name: Cubie
   m_TagString: Diamond
@@ -109,7 +109,7 @@ MonoBehaviour:
   endScale: {x: 1.5, y: 1.5, z: 1.5}
   scaleSpeed: 1
   scaleRate: 0.5
---- !u!114 &4266268988864045624
+--- !u!114 &4831285218510344442
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000013765287000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c28963c781a75d34589b11afd2d8b997, type: 3}
+  m_Script: {fileID: 11500000, guid: c6194f3dac813c34fb94556ef18fa5d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diamonds: 0
+  data: {fileID: 11400000, guid: f71d17af02ee0b6438f710516c140154, type: 2}
