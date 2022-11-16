@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 3381827473327191798}
   - component: {fileID: 3371543685175021828}
   - component: {fileID: 3390811488408075254}
-  - component: {fileID: 1562540677503455448}
+  - component: {fileID: 489804983320623206}
+  - component: {fileID: 1845780129407592984}
   m_Layer: 0
   m_Name: Cubie
   m_TagString: Diamond
@@ -109,7 +110,7 @@ MonoBehaviour:
   endScale: {x: 1.5, y: 1.5, z: 1.5}
   scaleSpeed: 1
   scaleRate: 0.5
---- !u!114 &1562540677503455448
+--- !u!114 &489804983320623206
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,7 +119,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 3357463195486826168}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c28963c781a75d34589b11afd2d8b997, type: 3}
+  m_Script: {fileID: 11500000, guid: c6194f3dac813c34fb94556ef18fa5d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diamonds: 0
+  data: {fileID: 11400000, guid: f71d17af02ee0b6438f710516c140154, type: 2}
+--- !u!135 &1845780129407592984
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3357463195486826168}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.0000001
+  m_Center: {x: 0, y: 0, z: -0.0000004768373}

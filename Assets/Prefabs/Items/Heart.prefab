@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5771258066149622800}
   - component: {fileID: 5771258067133892886}
   - component: {fileID: -7082387949656753600}
+  - component: {fileID: 7435618209442736494}
   m_Layer: 0
   m_Name: Heart
   m_TagString: Untagged
@@ -146,4 +147,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6194f3dac813c34fb94556ef18fa5d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 0}
+  data: {fileID: 11400000, guid: 88c1f84c6b62d0f43bf6f3f4cd0c3c67, type: 2}
+--- !u!65 &7435618209442736494
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5873027388946905302}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.1679075, y: 0.44791496, z: 2.0693667}
+  m_Center: {x: 0.0014882088, y: -0.0025726787, z: -0.046597403}

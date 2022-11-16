@@ -10,7 +10,7 @@ public class Item : MonoBehaviour, IInteractable
     public void OnEnterInteract()
     {
         InventoryManager.Instance.AddItemToInventory(data);
-
+        XPManager.instance.AddXP(10); //lis‰t‰‰n 10xp:t‰ 
         Destroy(this.gameObject);
     }
 
