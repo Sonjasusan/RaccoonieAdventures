@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: d910d662e40870a4bbc15d0e5a945f82,
+    type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -5690,7 +5691,7 @@ Transform:
   - {fileID: 374889010}
   - {fileID: 421238693}
   m_Father: {fileID: 0}
-  m_RootOrder: 34
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &184848761
 PrefabInstance:
@@ -18237,7 +18238,7 @@ Transform:
   - {fileID: 398199570}
   - {fileID: 476660060}
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &569540420
 PrefabInstance:
@@ -50065,7 +50066,7 @@ Transform:
   - {fileID: 1058777944}
   - {fileID: 1467857340}
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1460212997 stripped
 Transform:
