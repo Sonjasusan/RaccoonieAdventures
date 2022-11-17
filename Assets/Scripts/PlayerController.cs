@@ -70,6 +70,8 @@ public class PlayerController : MonoBehaviour
         {
             // Jos epätosi, pelaaja ei ole maassa
             isGrounded = false;
+            //animator.SetBool(isJumpingHash, true); //animaattorissa isJumping trueksi
+
 
         }
 

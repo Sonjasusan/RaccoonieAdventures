@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Item : MonoBehaviour, IInteractable
 {
-
     [SerializeField] AudioSource pickUpSE; //ker‰ilyn ‰‰ni
+
 
     public ItemData data;
 
