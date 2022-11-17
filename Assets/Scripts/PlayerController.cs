@@ -13,7 +13,10 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 10; // Pelaajan hypyn voima
     public float rotationSpeed = 200;
 
-    public SoundEffect jumpSE; //Hyppy soundeffect
+
+    //public SoundEffect jumpSE; //Hyppy soundeffect
+
+    [SerializeField] private AudioSource jumpSE; //Hyppy‰‰ni
 
     public Transform itemDropPoint; //itemin pudotuspointti
 
@@ -67,15 +70,16 @@ public class PlayerController : MonoBehaviour
         {
             // Jos ep‰tosi, pelaaja ei ole maassa
             isGrounded = false;
+
         }
 
         // Kun pelaaja on maassa ja painaa Space -> hyp‰t‰‰n AddForce toiminnon avulla
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             animator.SetBool(isJumpingHash, true); //animaattorissa isJumping trueksi
+            jumpSE.Play(); //Toistetaan hyppy‰‰ni
 
             rb.AddForce(Vector3.up * jumpForce);
-            //AudioManager.Instance.PlayClipOnce(jumpSE, this.gameObject);
         }
 
         //Juokseminen
