@@ -79,6 +79,7 @@ GameObject:
   - component: {fileID: 7625045986150367636}
   - component: {fileID: 7599198405271409725}
   - component: {fileID: 277643878158019706}
+  - component: {fileID: 3045891748359195301}
   m_Layer: 0
   m_Name: Fox
   m_TagString: Player
@@ -135,6 +136,17 @@ MonoBehaviour:
   speed: 10
   jumpForce: 400
   rotationSpeed: 200
+  quest:
+    isActive: 0
+    title: Cubies and stars makes a day better
+    description: Collect 3 cubie or star items.
+    XPReward: 150
+    goal:
+      goalType: 0
+      requiredAmount: 3
+      currentAmount: 0
+  questgiv: {fileID: 0}
+  xpmanager: {fileID: 0}
   jumpSE: {fileID: 277643878158019706}
   itemDropPoint: {fileID: 0}
 --- !u!95 &6251645546497574377
@@ -278,6 +290,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3045891748359195301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180609343054744066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2b8b4d7a43859943a7741fd4bf5d8eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &552232122167450822
 GameObject:
   m_ObjectHideFlags: 0
