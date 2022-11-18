@@ -9,15 +9,14 @@ public class ItemData : ScriptableObject
     public Sprite itemIcon;
     public ItemType itemType;
     public GameObject itemPrefab;
+    [SerializeField] AudioSource pickUpSE; //ker‰ilyn ‰‰ni
+
     //public SoundEffect pickupSE; <- pickup ‰‰ni
     //public SoundEffect dropSE; <- drop ‰‰ni
 }
 
 public enum ItemType //Itemin tyyppi
 {
-    Clutter,
-    Armor,
-    Weapon,
     Consumable,
     Spell
 }

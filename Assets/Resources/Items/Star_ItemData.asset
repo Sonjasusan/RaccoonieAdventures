@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Star
   itemIcon: {fileID: 21300000, guid: dc597dcbf74c3234c995ef7378998a1d, type: 3}
-  itemType: 3
+  itemType: 0
   itemPrefab: {fileID: 1838030826455175483, guid: 2944e589715a77345a7a131a33340c2f,
     type: 3}
+  pickUpSE: {fileID: 0}
