@@ -13,7 +13,11 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 10; // Pelaajan hypyn voima
     public float rotationSpeed = 200;
 
-    public SoundEffect jumpSE; //Hyppy soundeffect
+    public Quest quest; //Viitataan questiin
+    public QuestGiver questgiv;
+    public XPManager xpmanager;
+
+    [SerializeField] private AudioSource jumpSE; //Hyppy‰‰ni
 
     public Transform itemDropPoint; //itemin pudotuspointti
 
@@ -28,6 +32,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        questgiv.OpenQuestWindow();
+
         GameManager.Instance.Player = this.gameObject;
 
         // haetaan t‰st‰ objektista rigidbody komponentti talteen
@@ -38,6 +44,19 @@ public class PlayerController : MonoBehaviour
         isWalkingHash = Animator.StringToHash("isWalking"); //K‰vely animaatio
         isRunningHash = Animator.StringToHash("isRunning"); //Juoksu animaatio
         isJumpingHash = Animator.StringToHash("isJumping"); //Hyppyanimaatio
+
+
+        if (quest.isActive) //tarkistetaan onko questia (onko se aktiivinen)
+        {
+            quest.goal.ItemCollected(); //Kutsutaan questin ItemCollected() -metodia ja suoritetaan sit‰
+
+            if (quest.goal.IsReached()) //jos questin tavoite on saavutettu
+            {
+                xpmanager.AddXP(150);
+                //xpmanager.currentXP += quest.XPReward; //lis‰t‰‰n questin palkinto (eli xp) currentxp:hen
+                quest.Complete(); //Questi valmis
+            }
+        }
 
     }
 
@@ -67,15 +86,18 @@ public class PlayerController : MonoBehaviour
         {
             // Jos ep‰tosi, pelaaja ei ole maassa
             isGrounded = false;
+            //animator.SetBool(isJumpingHash, true); //animaattorissa isJumping trueksi
+
+
         }
 
         // Kun pelaaja on maassa ja painaa Space -> hyp‰t‰‰n AddForce toiminnon avulla
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             animator.SetBool(isJumpingHash, true); //animaattorissa isJumping trueksi
+            jumpSE.Play(); //Toistetaan hyppy‰‰ni
 
             rb.AddForce(Vector3.up * jumpForce);
-            //AudioManager.Instance.PlayClipOnce(jumpSE, this.gameObject);
         }
 
         //Juokseminen
