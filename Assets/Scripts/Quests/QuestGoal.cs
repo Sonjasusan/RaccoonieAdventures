@@ -6,7 +6,6 @@ using UnityEngine;
 public class QuestGoal
 {
     public GoalType goalType;
-    public ItemType itemtype;
 
     public int requiredAmount; //tarvittavam‰‰r‰
     public int currentAmount; //t‰m‰n hetkinen m‰‰r‰
@@ -15,16 +14,14 @@ public class QuestGoal
     //Tarkistetaan onko tavoite saavutettu
     public bool IsReached() //<- boolean (eli true tai false)
     {
-        return(currentAmount >= requiredAmount); //On saavutettu = IsReached -> true
+        return (currentAmount >= requiredAmount); //On saavutettu = IsReached -> true
     }
 
     public void ItemCollected() //itemiker‰ys quest
     {
-        if(goalType == GoalType.Gathering && itemtype == ItemType.Consumable) //jos questi on ker‰ily & itemin tyyppi consumable
-        {
+        if (goalType == GoalType.Gathering) //jos questi on ker‰ily & itemin tyyppi consumable
             currentAmount++; //kasvatetaan sen hetkist‰ m‰‰r‰‰
-            
-        }
+       
     }
 }
 

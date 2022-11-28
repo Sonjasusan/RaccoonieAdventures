@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Quest 
+public class Quest
 {
     public bool isActive; //boolean kertomaan onko questi aktiivinen
 

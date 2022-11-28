@@ -5,6 +5,7 @@ public class XPManager : MonoBehaviour
 {
     public TextMeshProUGUI currentXPText, targetXPText, levelText; //xp tekstit (xp.t‰ nyt ja tarvittava m‰‰r‰)
     public int currentXP, targetXp, level; //xp:t numeroina
+    public XPBar xpbar;
 
     //Singleton
     public static XPManager instance;
@@ -39,6 +40,8 @@ public class XPManager : MonoBehaviour
             currentXP = currentXP - targetXp; //xp nollataan
             level++; // nostetaan leveli‰ yhdell‰
             targetXp += targetXp / 20;
+
+            xpbar.IncrementXPProg(); //lis‰t‰‰n slideriin arvot 
 
             levelText.text = level.ToString(); //p‰ivitet‰‰n uusi leveli tekstikentt‰‰n
             targetXPText.text = targetXp.ToString();

@@ -12,6 +12,7 @@ public class UiManager : Singleton<UiManager>
     [Header("Main Menu")]
     public GameObject MainMenuPanel; // Main menu paneeli
 
+
     [Header("HUD")]
     public GameObject HUDPanel; // Pelin HUD Paneeli, eli UI:t jotka näkyy pelin aikana (healthbar yms.)
     public GameObject InventoryPanel; //Inventory panel
