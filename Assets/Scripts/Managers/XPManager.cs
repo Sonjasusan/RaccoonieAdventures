@@ -33,6 +33,7 @@ public class XPManager : MonoBehaviour
     public void AddXP(int xp)
     {
         currentXP += xp;
+        //xpbar.IncrementXPProg(); //lis‰t‰‰n slideriin arvot 
 
         //Level up
         if (currentXP >= targetXp)
@@ -41,7 +42,6 @@ public class XPManager : MonoBehaviour
             level++; // nostetaan leveli‰ yhdell‰
             targetXp += targetXp / 20;
 
-            xpbar.IncrementXPProg(); //lis‰t‰‰n slideriin arvot 
 
             levelText.text = level.ToString(); //p‰ivitet‰‰n uusi leveli tekstikentt‰‰n
             targetXPText.text = targetXp.ToString();
