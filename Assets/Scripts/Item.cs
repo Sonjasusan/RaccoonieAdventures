@@ -7,9 +7,7 @@ using UnityEngine;
 public class Item : MonoBehaviour, IInteractable
 {
     [SerializeField] AudioSource pickUpSE; //ker‰ilyn ‰‰ni
-    public XPManager xpmanager;
-    public XPBar xpBar;
-    public QuestGoal questgoal;
+    public XPManager xpmanager; //XPManager Xp:t‰ varten
     public Quest quest;
 
     public ItemData data;
@@ -18,10 +16,8 @@ public class Item : MonoBehaviour, IInteractable
     {
         InventoryManager.Instance.AddItemToInventory(data);
         XPManager.instance.AddXP(10); //lis‰t‰‰n 10xp:t‰
-        //xpBar.IncrementXPProg();
-
+        quest.goal.ItemCollected();
         pickUpSE.Play(); // Toistetaan ‰‰ni
-        //questgoal.ItemCollected();
         Destroy(this.gameObject);
     }
 

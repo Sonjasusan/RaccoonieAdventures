@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7852609698321682917}
   m_Layer: 0
   m_Name: Cubie
-  m_TagString: Consumable
+  m_TagString: Cubie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,11 +125,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpSE: {fileID: 7852609698321682917}
   xpmanager: {fileID: 0}
-  questgoal:
-    goalType: 0
-    itemtype: 0
-    requiredAmount: 0
-    currentAmount: 0
+  quest:
+    isActive: 0
+    title: 
+    description: 
+    XPReward: 0
+    goal:
+      goalType: 0
+      requiredAmount: 0
+      currentAmount: 0
   data: {fileID: 11400000, guid: f71d17af02ee0b6438f710516c140154, type: 2}
 --- !u!135 &1845780129407592984
 SphereCollider:

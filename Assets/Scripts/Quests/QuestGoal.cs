@@ -19,8 +19,10 @@ public class QuestGoal
 
     public void ItemCollected() //itemiker‰ys quest
     {
-        if (goalType == GoalType.Gathering) //jos questi on ker‰ily & itemin tyyppi consumable
+        if (goalType == GoalType.Gathering)
+        {
             currentAmount++; //kasvatetaan sen hetkist‰ m‰‰r‰‰
+        }       
        
     }
 }
