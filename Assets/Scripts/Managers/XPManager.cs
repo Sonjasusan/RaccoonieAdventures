@@ -40,6 +40,7 @@ public class XPManager : MonoBehaviour
             level++; // nostetaan leveli‰ yhdell‰
             targetXp += targetXp / 20;
 
+
             levelText.text = level.ToString(); //p‰ivitet‰‰n uusi leveli tekstikentt‰‰n
             targetXPText.text = targetXp.ToString();
         }

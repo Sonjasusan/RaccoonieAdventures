@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     int isWalkingHash;
     int isRunningHash;
     int isJumpingHash;
+   
 
     public float speed = 10; // Pelaajan nopeus
     public float jumpForce = 10; // Pelaajan hypyn voima
@@ -32,7 +33,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        questgiv.OpenQuestWindow();
+        questgiv.OpenQuestWindow(); //aukastaan questwindow
 
         GameManager.Instance.Player = this.gameObject;
 
@@ -45,7 +46,6 @@ public class PlayerController : MonoBehaviour
         isRunningHash = Animator.StringToHash("isRunning"); //Juoksu animaatio
         isJumpingHash = Animator.StringToHash("isJumping"); //Hyppyanimaatio
 
-
         if (quest.isActive) //tarkistetaan onko questia (onko se aktiivinen)
         {
             quest.goal.ItemCollected(); //Kutsutaan questin ItemCollected() -metodia ja suoritetaan sit‰
@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
             if (quest.goal.IsReached()) //jos questin tavoite on saavutettu
             {
                 xpmanager.AddXP(150);
-                //xpmanager.currentXP += quest.XPReward; //lis‰t‰‰n questin palkinto (eli xp) currentxp:hen
+                xpmanager.currentXP += quest.XPReward; //lis‰t‰‰n questin palkinto (eli xp) currentxp:hen
                 quest.Complete(); //Questi valmis
             }
         }
@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
         playerInput = transform.forward * Input.GetAxis("Vertical") * speed;// <- speed
         playerInput.y = rb.velocity.y; // y-arvoksi asetetaan Rigidbodyn velocity y, joka vastaa painovoimaa
 
-       
+
         // Tarkistus, jos pelaajan y-velocity on -0.01 ja 0.01 v‰lill‰
         if (rb.velocity.y <= 0.01f && rb.velocity.y >= -0.01f)
         {
@@ -98,6 +98,7 @@ public class PlayerController : MonoBehaviour
             jumpSE.Play(); //Toistetaan hyppy‰‰ni
 
             rb.AddForce(Vector3.up * jumpForce);
+
         }
 
         //Juokseminen
@@ -110,7 +111,6 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool(isRunningHash, false); //muussa tapauksessa isRunning on false
         }
-      
 
     }
 
@@ -137,6 +137,7 @@ public class PlayerController : MonoBehaviour
         {
             col.GetComponent<IInteractable>().OnEnterInteract();
         }
+
     }
 
     void OnTriggerExit(Collider col)

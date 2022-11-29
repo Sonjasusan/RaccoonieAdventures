@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 5873027388946905302}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 10.225, y: 2.25, z: -33.34}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -149,6 +149,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpSE: {fileID: 4074355237455516583}
+  xpmanager: {fileID: 0}
+  questgoal:
+    goalType: 0
+    requiredAmount: 0
+    currentAmount: 0
+  quest:
+    isActive: 0
+    title: 
+    description: 
+    XPReward: 0
+    goal:
+      goalType: 0
+      requiredAmount: 0
+      currentAmount: 0
   data: {fileID: 11400000, guid: 88c1f84c6b62d0f43bf6f3f4cd0c3c67, type: 2}
 --- !u!65 &7435618209442736494
 BoxCollider:

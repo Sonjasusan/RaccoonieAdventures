@@ -26,6 +26,7 @@ public class AnimationStateController : MonoBehaviour
         //bool isJumping = animator.GetBool(isJumpingHash);
         //bool jumpPressed = Input.GetKey("space");
         bool forwardPressed = Input.GetKey("w");
+        //bool arrowPressed = Input.GetKeyDown(KeyCode.UpArrow);
         bool runPressed = Input.GetKey(KeyCode.LeftShift);
 
         //Jos pelaaja painaa w:t‰
@@ -34,11 +35,24 @@ public class AnimationStateController : MonoBehaviour
             animator.SetBool(isWalkingHash, true); //laitetaan animaattorissa boolean "isWalking" trueksi (koska k‰vell‰‰n)
         }
 
+        ////Jos liikutaan nuolin‰pp‰imell‰
+        //if (isWalking && arrowPressed)
+        //{
+        //    animator.SetBool(isWalkingHash, true); //laitetaan animaattorissa boolean "isWalking" trueksi (koska k‰vell‰‰n)
+
+        //}
+
         //Jos pelaaja ei paina w:t‰
         if (isWalking && !forwardPressed)
         {
             animator.SetBool(isWalkingHash, false); //laitetaan animaattorissa boolean "isWalking" falseksi (koska ei k‰vell‰)
         }
+
+        // //Jos pelaaja ei paina nuolin‰pp‰int‰
+        //if (isWalking && !arrowPressed)
+        //{
+        //    animator.SetBool(isWalkingHash, false); //laitetaan animaattorissa boolean "isWalking" falseksi (koska ei k‰vell‰)
+        //}
 
         //JUOKSU OSIO
 

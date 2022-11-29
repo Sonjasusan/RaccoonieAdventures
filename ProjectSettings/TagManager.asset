@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Diamond
+  - Consumable
+  - Cubie
   layers:
   - Default
   - TransparentFX
