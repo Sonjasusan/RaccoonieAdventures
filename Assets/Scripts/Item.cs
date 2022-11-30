@@ -16,9 +16,7 @@ public class Item : MonoBehaviour, IInteractable
     public void OnEnterInteract()
     {
         InventoryManager.Instance.AddItemToInventory(data);
-        XPManager.instance.AddXP(10); //lis‰t‰‰n 10xp:t‰
-        //questGoal.currentAmount++;
-
+        XPManager.instance.AddXP(10); //lis‰t‰‰n 10xp:t‰ aina kun ker‰t‰‰n itemi
         pickUpSE.Play(); // Toistetaan ‰‰ni
 
         Destroy(this.gameObject);
