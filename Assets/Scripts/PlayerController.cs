@@ -46,23 +46,16 @@ public class PlayerController : MonoBehaviour
         isRunningHash = Animator.StringToHash("isRunning"); //Juoksu animaatio
         isJumpingHash = Animator.StringToHash("isJumping"); //Hyppyanimaatio
 
-        if (quest.isActive) //tarkistetaan onko questia (onko se aktiivinen)
-        {
-            quest.goal.ItemCollected(); //Kutsutaan questin ItemCollected() -metodia ja suoritetaan sit‰
-
-            if (quest.goal.IsReached()) //jos questin tavoite on saavutettu
-            {
-                xpmanager.AddXP(150);
-                xpmanager.currentXP += quest.XPReward; //lis‰t‰‰n questin palkinto (eli xp) currentxp:hen
-                quest.Complete(); //Questi valmis
-            }
-        }
 
     }
+
+
 
     // Update is called once per frame
     void Update()
     {
+
+
         bool runPressed = Input.GetKey(KeyCode.LeftShift); //juoksu left shiftill‰
 
 
@@ -130,14 +123,29 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider col)
+
+     void OnTriggerEnter(Collider col)
     {
         //Kun pelaaja osuu triggeriin, katsotaan onko siin‰ IInteractable rajapintaa, jos on niin toistetaan OnEnterInteract metodi
         if (col.GetComponent<IInteractable>() != null)
         {
             col.GetComponent<IInteractable>().OnEnterInteract();
         }
+        
+        //quest.goal.ItemCollected();
 
+        if (quest.isActive) //tarkistetaan onko questia (onko se aktiivinen)
+        {
+            quest.goal.ItemCollected(); //Kutsutaan questin ItemCollected() -metodia ja suoritetaan sit‰
+
+            if (quest.goal.IsReached()) //jos questin tavoite on saavutettu
+            {
+                Debug.Log("IsReached");
+                xpmanager.AddXP(150);
+                xpmanager.currentXP += quest.XPReward; //lis‰t‰‰n questin palkinto (eli xp) currentxp:hen
+                quest.Complete(); //Questi valmis
+            }
+        }
     }
 
     void OnTriggerExit(Collider col)

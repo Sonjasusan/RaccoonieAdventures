@@ -47,5 +47,8 @@ public class XPManager : MonoBehaviour
 
 
         currentXPText.text = currentXP.ToString();
+
+
+
     }
 }

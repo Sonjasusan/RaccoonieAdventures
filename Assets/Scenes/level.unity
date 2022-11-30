@@ -75453,6 +75453,16 @@ PrefabInstance:
       propertyPath: questgiv
       value: 
       objectReference: {fileID: 422048434}
+    - target: {fileID: 3238801784859551537, guid: 301b0f435c6fa334a804f81f306ae108,
+        type: 3}
+      propertyPath: quest.goal.curLvl
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3238801784859551537, guid: 301b0f435c6fa334a804f81f306ae108,
+        type: 3}
+      propertyPath: quest.goal.requiredAmount
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 301b0f435c6fa334a804f81f306ae108, type: 3}
 --- !u!1001 &5873435852694248270

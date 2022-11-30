@@ -17,14 +17,23 @@ public class QuestGoal
         return (currentAmount >= requiredAmount); //On saavutettu = IsReached -> true
     }
 
+
     public void ItemCollected() //itemiker‰ys quest
     {
         if (goalType == GoalType.Gathering)
-        {
             currentAmount++; //kasvatetaan sen hetkist‰ m‰‰r‰‰
-        }       
-       
+        Debug.Log("Collected." + currentAmount);
+        
+
     }
+
+    //public void LevelReached()
+    //{
+    //    if (XPManager.instance.level == 5)
+    //    {
+
+    //    }
+    //}
 }
 
 //Quest tavoitteen tyyppi
