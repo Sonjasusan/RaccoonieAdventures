@@ -12,6 +12,7 @@ public class UiManager : Singleton<UiManager>
     [Header("Main Menu")]
     public GameObject MainMenuPanel; // Main menu paneeli
 
+
     [Header("HUD")]
     public GameObject HUDPanel; // Pelin HUD Paneeli, eli UI:t jotka n‰kyy pelin aikana (healthbar yms.)
     public GameObject InventoryPanel; //Inventory panel
@@ -36,6 +37,15 @@ public class UiManager : Singleton<UiManager>
         MainMenuPanel.SetActive(t); // jos t = true --> MainMenu p‰‰lle
         HUDPanel.SetActive(!t); // jos t = true --> HUD Pois p‰‰lt‰
     }
+
+    public void ToggleMainMenu()
+    {
+        if (HUDPanel.activeInHierarchy == false)
+            return;
+
+        MainMenuPanel.SetActive(!InventoryPanel.activeInHierarchy);
+    }
+
 
     public void ToggleInventoryPanel()
     {

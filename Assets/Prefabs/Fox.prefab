@@ -76,10 +76,11 @@ GameObject:
   - component: {fileID: 7554315934083835873}
   - component: {fileID: 3238801784859551537}
   - component: {fileID: 6251645546497574377}
-  - component: {fileID: 7625045986150367636}
   - component: {fileID: 7599198405271409725}
   - component: {fileID: 277643878158019706}
   - component: {fileID: 3045891748359195301}
+  - component: {fileID: 1715148652}
+  - component: {fileID: 7401060881446537004}
   m_Layer: 0
   m_Name: Fox
   m_TagString: Player
@@ -138,15 +139,14 @@ MonoBehaviour:
   rotationSpeed: 200
   quest:
     isActive: 0
-    title: Cubies and stars makes a day better
-    description: Collect 3 cubie or star items.
-    XPReward: 150
+    title: 
+    description: 
+    XPReward: 0
     goal:
       goalType: 0
       requiredAmount: 3
       currentAmount: 0
   questgiv: {fileID: 0}
-  xpmanager: {fileID: 0}
   jumpSE: {fileID: 277643878158019706}
   itemDropPoint: {fileID: 0}
 --- !u!95 &6251645546497574377
@@ -169,18 +169,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7625045986150367636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 180609343054744066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25807f119da3b80428460701ed9662b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &7599198405271409725
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -300,6 +288,60 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2b8b4d7a43859943a7741fd4bf5d8eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1715148652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180609343054744066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d827f717fe0a4de46a443f778716052e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GamePaused:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3238801784859551537}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  GameResumed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3238801784859551537}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &7401060881446537004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180609343054744066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25807f119da3b80428460701ed9662b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &552232122167450822

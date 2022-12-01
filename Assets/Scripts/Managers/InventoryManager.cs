@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InventoryManager : Singleton<InventoryManager>
 {
+
     List<ItemData> playerInventory = new List<ItemData>();
 
 
@@ -13,13 +14,18 @@ public class InventoryManager : Singleton<InventoryManager>
         {
             UiManager.Instance.ToggleInventoryPanel();
         }
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            UiManager.Instance.ToggleMainMenu();
+        }
     }
 
     public void AddItemToInventory(ItemData newItem) //Lis‰t‰‰n itemi
     {
         Debug.Log("Added " + newItem.itemName + " to inventory"); //<-Logataan ett‰ itemi on lis‰tty
         playerInventory.Add(newItem); //Lis‰t‰‰n
-                                      //AudioManager.Instance.PlayClipOnce(newItem.pickupSE); <-Pickupin soundeffect
+        //AudioManager.Instance.PlayClipOnce(newItem.pickUpSE);//<-Pickupin soundeffect
 
 
         UiManager.Instance.CreateNewUIItem(newItem); //UIManageriin uusi itemi
@@ -31,9 +37,9 @@ public class InventoryManager : Singleton<InventoryManager>
         {
             //AudioManager.Instance.PlayClipOnce(item.dropSE); // 
             PlayerController player = GameManager.Instance.Player.GetComponent<PlayerController>();
-            GameObject droppedItem = Instantiate(item.itemPrefab, player.itemDropPoint); //pudotetaan itemi
-            droppedItem.transform.parent = null; // poistetaan tiputettu objekti pelaajasta
-            droppedItem.transform.position += droppedItem.transform.right * Random.Range(-1.0f, 1.0f); // m‰‰ritelty droppoint
+            //GameObject droppedItem = Instantiate(item.itemPrefab, player.itemDropPoint); //pudotetaan itemi
+            //droppedItem.transform.parent = null; // poistetaan tiputettu objekti pelaajasta
+            //droppedItem.transform.position += droppedItem.transform.right * Random.Range(-1.0f, 1.0f); // m‰‰ritelty droppoint
 
             playerInventory.Remove(item); //Poistetaan itemi
             Debug.Log("Removed " + item.itemName + " from inventory"); //Logataan poisto

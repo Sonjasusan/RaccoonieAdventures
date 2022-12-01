@@ -26,7 +26,6 @@ public class XPManager : MonoBehaviour
         currentXPText.text = currentXP.ToString();
         targetXPText.text = targetXp.ToString();
         levelText.text = level.ToString();
-
     }
 
     public void AddXP(int xp)
@@ -40,10 +39,10 @@ public class XPManager : MonoBehaviour
             level++; // nostetaan leveli‰ yhdell‰
             targetXp += targetXp / 20;
 
+
             levelText.text = level.ToString(); //p‰ivitet‰‰n uusi leveli tekstikentt‰‰n
             targetXPText.text = targetXp.ToString();
         }
-
 
         currentXPText.text = currentXP.ToString();
     }
