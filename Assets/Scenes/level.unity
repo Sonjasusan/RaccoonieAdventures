@@ -13935,8 +13935,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5935215691715605524, guid: 1b8c9248335a13d4e8a25f2d7f25b89d, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b8c9248335a13d4e8a25f2d7f25b89d, type: 3}
 --- !u!114 &422048434 stripped
 MonoBehaviour:
@@ -35018,6 +35017,7 @@ GameObject:
   - component: {fileID: 987990562}
   - component: {fileID: 987990561}
   - component: {fileID: 987990560}
+  - component: {fileID: 987990564}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -35108,6 +35108,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &987990564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987990559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2b8b4d7a43859943a7741fd4bf5d8eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &988705877
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62710,6 +62722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d8e50b247962e84fbbaeed48600a0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameRestartDelay: 1
 --- !u!1001 &1716714923
 PrefabInstance:
   m_ObjectHideFlags: 0
