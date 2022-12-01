@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         questgiv.OpenQuestWindow(); //aukastaan questwindow
 
         GameManager.Instance.Player = this.gameObject;

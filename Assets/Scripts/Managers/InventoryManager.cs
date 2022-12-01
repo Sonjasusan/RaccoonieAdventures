@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InventoryManager : Singleton<InventoryManager>
 {
+
     List<ItemData> playerInventory = new List<ItemData>();
 
 
@@ -13,13 +14,18 @@ public class InventoryManager : Singleton<InventoryManager>
         {
             UiManager.Instance.ToggleInventoryPanel();
         }
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            UiManager.Instance.ToggleMainMenu();
+        }
     }
 
     public void AddItemToInventory(ItemData newItem) //Lis‰t‰‰n itemi
     {
         Debug.Log("Added " + newItem.itemName + " to inventory"); //<-Logataan ett‰ itemi on lis‰tty
         playerInventory.Add(newItem); //Lis‰t‰‰n
-     //AudioManager.Instance.PlayClipOnce(newItem.pickupSE); <-Pickupin soundeffect
+        //AudioManager.Instance.PlayClipOnce(newItem.pickUpSE);//<-Pickupin soundeffect
 
 
         UiManager.Instance.CreateNewUIItem(newItem); //UIManageriin uusi itemi
