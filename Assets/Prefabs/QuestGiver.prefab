@@ -48,11 +48,10 @@ MonoBehaviour:
   quest:
     isActive: 0
     title: Cubies and stars makes a day better
-    description: Find and collect 3 cubie or star items to get the reward.
+    description: Find and collect 3 items to get a XP reward.
     XPReward: 150
     goal:
       goalType: 0
-      itemtype: 0
       requiredAmount: 3
       currentAmount: 0
   player: {fileID: 3238801784859551537, guid: 301b0f435c6fa334a804f81f306ae108, type: 3}

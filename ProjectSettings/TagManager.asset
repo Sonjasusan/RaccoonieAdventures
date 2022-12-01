@@ -7,6 +7,7 @@ TagManager:
   - Diamond
   - Consumable
   - Cubie
+  - Water
   layers:
   - Default
   - TransparentFX

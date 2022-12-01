@@ -15,15 +15,16 @@ public class QuestGoal
     public bool IsReached() //<- boolean (eli true tai false)
     {
         return (currentAmount >= requiredAmount); //On saavutettu = IsReached -> true
+                                                  //currentAmount enemm‰n tai yht‰kuin requiredAmount  
     }
+
 
     public void ItemCollected() //itemiker‰ys quest
     {
         if (goalType == GoalType.Gathering)
-        {
             currentAmount++; //kasvatetaan sen hetkist‰ m‰‰r‰‰
-        }       
-       
+        Debug.Log("Collected items for quest: " + currentAmount); //debugataan
+        
     }
 }
 

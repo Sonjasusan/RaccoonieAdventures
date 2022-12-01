@@ -147,7 +147,6 @@ MonoBehaviour:
       requiredAmount: 3
       currentAmount: 0
   questgiv: {fileID: 0}
-  xpmanager: {fileID: 0}
   jumpSE: {fileID: 277643878158019706}
   itemDropPoint: {fileID: 0}
 --- !u!95 &6251645546497574377

@@ -9,20 +9,22 @@ public class Item : MonoBehaviour, IInteractable
     [SerializeField] AudioSource pickUpSE; //ker‰ilyn ‰‰ni
     public XPManager xpmanager; //XPManager Xp:t‰ varten
     public Quest quest;
+    public QuestGoal questGoal;
 
     public ItemData data;
 
     public void OnEnterInteract()
     {
         InventoryManager.Instance.AddItemToInventory(data);
-        XPManager.instance.AddXP(10); //lis‰t‰‰n 10xp:t‰
-        quest.goal.ItemCollected();
+        XPManager.instance.AddXP(20); //lis‰t‰‰n 10xp:t‰ aina kun ker‰t‰‰n itemi
         pickUpSE.Play(); // Toistetaan ‰‰ni
+
         Destroy(this.gameObject);
     }
 
     public void OnExitInteract()
     {
+       
 
     }
 

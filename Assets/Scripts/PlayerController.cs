@@ -5,18 +5,17 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     Animator animator;
-    int isWalkingHash;
-    int isRunningHash;
-    int isJumpingHash;
+    int isWalkingHash; //k‰vely
+    int isRunningHash; //juoksu
+    int isJumpingHash; //hyppy
    
-
     public float speed = 10; // Pelaajan nopeus
     public float jumpForce = 10; // Pelaajan hypyn voima
     public float rotationSpeed = 200;
 
     public Quest quest; //Viitataan questiin
-    public QuestGiver questgiv;
-    public XPManager xpmanager;
+    public QuestGiver questgiv; //viitataan questgiveriin - Antaa questin
+
 
     [SerializeField] private AudioSource jumpSE; //Hyppy‰‰ni
 
@@ -33,6 +32,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         questgiv.OpenQuestWindow(); //aukastaan questwindow
 
         GameManager.Instance.Player = this.gameObject;
@@ -45,26 +45,13 @@ public class PlayerController : MonoBehaviour
         isWalkingHash = Animator.StringToHash("isWalking"); //K‰vely animaatio
         isRunningHash = Animator.StringToHash("isRunning"); //Juoksu animaatio
         isJumpingHash = Animator.StringToHash("isJumping"); //Hyppyanimaatio
-
-        if (quest.isActive) //tarkistetaan onko questia (onko se aktiivinen)
-        {
-            quest.goal.ItemCollected(); //Kutsutaan questin ItemCollected() -metodia ja suoritetaan sit‰
-
-            if (quest.goal.IsReached()) //jos questin tavoite on saavutettu
-            {
-                xpmanager.AddXP(150);
-                xpmanager.currentXP += quest.XPReward; //lis‰t‰‰n questin palkinto (eli xp) currentxp:hen
-                quest.Complete(); //Questi valmis
-            }
-        }
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        bool runPressed = Input.GetKey(KeyCode.LeftShift); //juoksu left shiftill‰
 
+        bool runPressed = Input.GetKey(KeyCode.LeftShift); //juoksu left shiftill‰
 
         // K‰‰nnet‰‰n pelaajaa transformin Rotate toiminnolla, pelk‰st‰‰n Horizontal inputin mukaan
         transform.Rotate(new Vector3(0, Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime, 0));
@@ -73,7 +60,6 @@ public class PlayerController : MonoBehaviour
         // T‰m‰n avulla pelaaja k‰velee aina suoraan sinnep‰in minne katsoo
         playerInput = transform.forward * Input.GetAxis("Vertical") * speed;// <- speed
         playerInput.y = rb.velocity.y; // y-arvoksi asetetaan Rigidbodyn velocity y, joka vastaa painovoimaa
-
 
         // Tarkistus, jos pelaajan y-velocity on -0.01 ja 0.01 v‰lill‰
         if (rb.velocity.y <= 0.01f && rb.velocity.y >= -0.01f)
@@ -86,9 +72,6 @@ public class PlayerController : MonoBehaviour
         {
             // Jos ep‰tosi, pelaaja ei ole maassa
             isGrounded = false;
-            //animator.SetBool(isJumpingHash, true); //animaattorissa isJumping trueksi
-
-
         }
 
         // Kun pelaaja on maassa ja painaa Space -> hyp‰t‰‰n AddForce toiminnon avulla
@@ -97,8 +80,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool(isJumpingHash, true); //animaattorissa isJumping trueksi
             jumpSE.Play(); //Toistetaan hyppy‰‰ni
 
-            rb.AddForce(Vector3.up * jumpForce);
-
+            rb.AddForce(Vector3.up * jumpForce); //hyppyvoima
         }
 
         //Juokseminen
@@ -111,7 +93,6 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool(isRunningHash, false); //muussa tapauksessa isRunning on false
         }
-
     }
 
     private void FixedUpdate()
@@ -120,24 +101,38 @@ public class PlayerController : MonoBehaviour
         // Kaikki Fysiikkaan liittyv‰t asiat lis‰t‰‰n FixedUpdate -metodiin
         rb.velocity = playerInput;
 
-        if (speed > 0)
+        if (speed > 0) //nopeus on suurempi kuin 0
         {
             animator.SetBool(isWalkingHash, true);
         }
-        else
+        else //muutoin (jos nopeus on 0 esim.
         {
             animator.SetBool(isWalkingHash, false);
         }
     }
 
-    void OnTriggerEnter(Collider col)
+     void OnTriggerEnter(Collider col)
     {
         //Kun pelaaja osuu triggeriin, katsotaan onko siin‰ IInteractable rajapintaa, jos on niin toistetaan OnEnterInteract metodi
         if (col.GetComponent<IInteractable>() != null)
         {
             col.GetComponent<IInteractable>().OnEnterInteract();
         }
+        
+        //Questiin liittyv‰
 
+        if (quest.isActive) //tarkistetaan onko questia (onko se aktiivinen)
+        {
+            quest.goal.ItemCollected(); //Kutsutaan questin ItemCollected() -metodia ja suoritetaan sit‰
+
+            if (quest.goal.IsReached()) //jos questin tavoite on saavutettu
+            {
+                XPManager.instance.AddXP(150); //lis‰t‰‰n 150xpt‰
+                //xpmanager.currentXP.ToString();
+                //xpmanager.currentXP += quest.XPReward; //lis‰t‰‰n questin palkinto (eli xp) currentxp:hen
+                quest.Complete(); //Questi valmis
+            }
+        }
     }
 
     void OnTriggerExit(Collider col)

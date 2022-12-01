@@ -126,14 +126,9 @@ MonoBehaviour:
   pickUpSE: {fileID: 7852609698321682917}
   xpmanager: {fileID: 0}
   quest:
-    isActive: 0
-    title: 
-    description: 
-    XPReward: 0
-    goal:
-      goalType: 0
-      requiredAmount: 0
-      currentAmount: 0
+    goalType: 0
+    requiredAmount: 3
+    currentAmount: 0
   data: {fileID: 11400000, guid: f71d17af02ee0b6438f710516c140154, type: 2}
 --- !u!135 &1845780129407592984
 SphereCollider:

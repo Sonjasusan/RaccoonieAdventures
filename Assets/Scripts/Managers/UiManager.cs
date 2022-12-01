@@ -38,6 +38,15 @@ public class UiManager : Singleton<UiManager>
         HUDPanel.SetActive(!t); // jos t = true --> HUD Pois p‰‰lt‰
     }
 
+    public void ToggleMainMenu()
+    {
+        if (HUDPanel.activeInHierarchy == false)
+            return;
+
+        MainMenuPanel.SetActive(!InventoryPanel.activeInHierarchy);
+    }
+
+
     public void ToggleInventoryPanel()
     {
         if (HUDPanel.activeInHierarchy == false)
